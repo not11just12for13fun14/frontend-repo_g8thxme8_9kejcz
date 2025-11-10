@@ -2,143 +2,131 @@ import Spline from '@splinetool/react-spline'
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-neutral-950 text-white selection:bg-emerald-300/40 selection:text-emerald-900">
-      {/* Navbar */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <a href="#home" className="flex items-center gap-2">
-              <div className="h-7 w-7 rounded-md bg-emerald-400/20 ring-1 ring-emerald-300/30 flex items-center justify-center">
-                <span className="text-emerald-300 font-bold">S3</span>
-              </div>
-              <span className="text-sm font-medium text-emerald-200">GovSecurity360</span>
-            </a>
-            <nav className="hidden md:flex items-center gap-8 text-sm text-neutral-200">
-              <a href="#product" className="hover:text-white transition-colors">Product</a>
-              <a href="#about" className="hover:text-white transition-colors">About Us</a>
-              <a href="#contact" className="inline-flex items-center rounded-md bg-emerald-500 px-3 py-1.5 font-medium text-neutral-900 hover:bg-emerald-400 transition-colors">
-                Get Demo
-              </a>
-            </nav>
-          </div>
+    <div className="min-h-screen bg-white text-neutral-900">
+      {/* Top Nav - ultra simple */}
+      <header className="sticky top-0 z-40 border-b border-neutral-200/60 bg-white/80 backdrop-blur">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="#home" className="flex items-center gap-2">
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white text-sm font-bold">S3</span>
+            <span className="font-medium tracking-tight">GovSecurity360</span>
+          </a>
+          <nav className="hidden md:flex items-center gap-8 text-sm">
+            <a href="#product" className="hover:text-emerald-700 transition-colors">Product</a>
+            <a href="#about" className="hover:text-emerald-700 transition-colors">About Us</a>
+            <a href="#contact" className="inline-flex items-center rounded-full bg-emerald-600 px-4 py-2 font-medium text-white hover:bg-emerald-500 transition-colors">Get Demo</a>
+          </nav>
         </div>
       </header>
 
-      {/* Hero */}
-      <section id="home" className="relative pt-24 md:pt-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <Spline
-            scene="https://prod.spline.design/DtQLjBkD1UpownGS/scene.splinecode"
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
-        {/* Subtle gradient overlay for readability */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-neutral-950/40 via-neutral-950/60 to-neutral-950" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl py-24 md:py-36">
-            <p className="text-emerald-300/90 font-semibold tracking-wide">S3 | Simple, Seamless, Secure</p>
-            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
-              Activating Intelligent GRC into Action
-            </h1>
-            <p className="mt-6 text-base sm:text-lg text-neutral-200/90 leading-relaxed">
-              Our vision is to empower organizations to harness the full potential of the GRC principle, delivered with simplicity, efficiency, reduced technical debt, and cost avoidance — by providing an adaptive intelligence core to every federal mission. We aim to help transform how agencies anticipate, assess, and address enterprise-wide risks through mature modular integration, AI-powered risk management that blends qualitative and quantitative insights to drive mission resilience, operational excellence, and strategic advantage.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#product" className="inline-flex items-center rounded-md bg-white/90 text-neutral-900 px-5 py-2.5 font-medium hover:bg-white transition-colors">
-                Explore Product
-              </a>
-              <a href="#contact" className="inline-flex items-center rounded-md border border-emerald-400/40 text-emerald-200 px-5 py-2.5 font-medium hover:bg-emerald-400/10 transition-colors">
-                Request Demo
-              </a>
+      {/* Hero - light, airy, centered copy + compact 3D on the side */}
+      <section id="home" className="relative">
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(90%_60%_at_50%_0%,rgba(16,185,129,0.10),transparent)]" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-14 items-center py-16 md:py-24">
+            <div>
+              <p className="text-emerald-700 font-semibold">S3 | Simple, Seamless, Secure</p>
+              <h1 className="mt-4 text-4xl sm:text-5xl font-semibold leading-tight tracking-tight">
+                Activating Intelligent GRC into Action
+              </h1>
+              <p className="mt-6 text-neutral-700 leading-relaxed">
+                Our vision is to empower organizations to harness the full potential of the GRC principle, delivered with simplicity, efficiency, reduced technical debt, and cost avoidance—by providing an adaptive intelligence core to every federal mission. We help agencies anticipate, assess, and address enterprise-wide risks through modular integration and AI-powered risk management that blends qualitative and quantitative insights.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#product" className="inline-flex items-center rounded-full border border-neutral-300 px-5 py-2.5 font-medium hover:border-emerald-500 hover:text-emerald-700 transition-colors">Explore Product</a>
+                <a href="#contact" className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 font-medium text-white hover:bg-emerald-500 transition-colors">Request Demo</a>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="overflow-hidden rounded-2xl border border-neutral-200 shadow-[0_10px_30px_rgba(0,0,0,0.06)] bg-white">
+                <div className="h-[380px] sm:h-[460px]">
+                  <Spline scene="https://prod.spline.design/DtQLjBkD1UpownGS/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 hidden sm:block rounded-xl bg-white border border-neutral-200 shadow px-4 py-2 text-sm">
+                <span className="text-emerald-700 font-medium">Security-first</span>
+                <span className="mx-2 text-neutral-300">•</span>
+                <span className="text-neutral-600">Minimal • Modern • Federal-ready</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Product */}
-      <section id="product" className="relative border-t border-white/10">
+      {/* Product - concise bullets, light cards */}
+      <section id="product" className="border-t border-neutral-200/70 bg-neutral-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-semibold">GovSecurity360</h2>
-              <p className="mt-4 text-neutral-300 leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">GovSecurity360</h2>
+              <p className="mt-4 text-neutral-700 leading-relaxed">
                 We believe a GRC platform should serve as the brain of a security program, providing real-time, comprehensive insight into enterprise and cybersecurity risks across the organization.
               </p>
-              <p className="mt-4 text-neutral-300 leading-relaxed">
-                GovSecurity360 is purpose-built for the federal government. It’s an experience-driven, mission-ready, government-grade GRC solution, fully OSCAL-enabled and powered by AI-enhanced intelligence.
+              <p className="mt-4 text-neutral-700 leading-relaxed">
+                Purpose-built for the federal government: experience-driven, mission-ready, government-grade, fully OSCAL-enabled and powered by AI-enhanced intelligence.
               </p>
-              <p className="mt-4 text-neutral-300 leading-relaxed">
-                GovSecurity360 helps agencies reduce compliance timelines, accelerate assessments, and move beyond static reporting to enable proactive, real-time risk governance. It places intelligent, actionable GRC directly into the hands of agency leaders, security executives, and operators to truly achieve Continuous Diagnostics Mitigation (CDM).
+              <p className="mt-4 text-neutral-700 leading-relaxed">
+                Reduce compliance timelines, accelerate assessments, and move beyond static reporting to enable proactive, real-time risk governance—advancing Continuous Diagnostics and Mitigation (CDM).
               </p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <ul className="space-y-4 text-sm text-neutral-200">
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
-                  <span>OSCAL-enabled, government-grade assurance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
-                  <span>AI-enhanced risk insights combining qualitative and quantitative signals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
-                  <span>Modular integration to reduce technical debt and cost</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-400" />
-                  <span>Real-time, actionable GRC for mission resilience</span>
-                </li>
-              </ul>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                'OSCAL-enabled, government-grade assurance',
+                'AI-enhanced risk insights (qualitative + quantitative)',
+                'Modular integration to reduce technical debt and cost',
+                'Real-time, actionable GRC for mission resilience',
+              ].map((item) => (
+                <div key={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-600" />
+                    <p className="text-sm text-neutral-800 leading-relaxed">{item}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Us */}
-      <section id="about" className="relative border-t border-white/10">
+      {/* About */}
+      <section id="about">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl font-semibold">About Us</h2>
-            <p className="mt-4 text-neutral-300 leading-relaxed">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">About Us</h2>
+            <p className="mt-4 text-neutral-700 leading-relaxed">
               GovSecurity360 is powered by a team of former government operators and industry executives who have held the very roles we will help transform.
             </p>
-            <p className="mt-4 text-neutral-300 leading-relaxed">
+            <p className="mt-4 text-neutral-700 leading-relaxed">
               From former CIO, CISO, CAIO, CPO and CTO to seasoned Governance, Risk Management, and Compliance (GRC) and Cyber Operations Manager, our founders bring decades of federal mission expertise, security operations mastery and compliance strategy know-how that will change how organizations fully utilize a GRC tool.
             </p>
-
-            <div className="mt-10">
-              <h3 className="text-lg font-medium text-emerald-300">Founder Names and Advisory Board Members</h3>
-              <p className="mt-2 text-neutral-300">(No titles or background info listed)</p>
+            <div className="mt-10 rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+              <h3 className="text-base font-medium text-emerald-700">Founder Names and Advisory Board Members</h3>
+              <p className="mt-2 text-sm text-neutral-600">(No titles or background info listed)</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="relative border-t border-white/10">
+      <section id="contact" className="border-t border-neutral-200/70 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl font-semibold">Contact Us</h2>
-            <p className="mt-4 text-neutral-300">Reach out to us at <a href="mailto:info@govsecurity360.com" className="text-emerald-300 underline hover:text-emerald-200">info@govsecurity360.com</a></p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="mailto:info@govsecurity360.com" className="inline-flex items-center rounded-md bg-emerald-500 px-5 py-2.5 font-medium text-neutral-900 hover:bg-emerald-400 transition-colors">Get Demo</a>
-              <a href="#home" className="inline-flex items-center rounded-md border border-white/10 px-5 py-2.5 hover:bg-white/5 transition-colors">Back to top</a>
+          <div className="max-w-xl">
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">Contact Us</h2>
+            <p className="mt-4 text-neutral-700">
+              Reach out to us at <a className="text-emerald-700 underline underline-offset-4 decoration-emerald-300 hover:text-emerald-800" href="mailto:info@govsecurity360.com">info@govsecurity360.com</a>
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="mailto:info@govsecurity360.com" className="inline-flex items-center rounded-full bg-emerald-600 px-5 py-2.5 font-medium text-white hover:bg-emerald-500 transition-colors">Get Demo</a>
+              <a href="#home" className="inline-flex items-center rounded-full border border-neutral-300 px-5 py-2.5 font-medium hover:border-emerald-500 hover:text-emerald-700 transition-colors">Back to top</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between text-xs text-neutral-400">
-          <span>© {new Date().getFullYear()} GovSecurity360. All rights reserved.</span>
-          <div className="hidden sm:flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
-            <span>Simple • Seamless • Secure</span>
-          </div>
+      <footer className="border-t border-neutral-200/70 bg-neutral-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between text-xs text-neutral-600">
+          <span>© {new Date().getFullYear()} GovSecurity360</span>
+          <span className="text-neutral-500">Simple • Seamless • Secure</span>
         </div>
       </footer>
     </div>
